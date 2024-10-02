@@ -46,6 +46,7 @@ section {
 
 .tag {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     padding: 4px;
     border: 2px solid rgb(234, 234, 234);
