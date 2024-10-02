@@ -1,4 +1,12 @@
-import './Card.css'
+import styles from './Card.module.css'
+
+/**
+ * @description A single card component representing a ticket. It displays the ticket ID, title, priority and tags.
+ * @param {object} props - The props passed to the component.
+ * @param {object} props.ticket - The ticket object containing the ID, title, priority and tags.
+ * @param {string} props.groupBy - The field to group the tickets by. Can be either "status" or "priority". 
+ * @returns {ReactElement} A React element representing the card component.
+ */
 const Card = (props) => {
   const { ticket, groupBy } = props; 
 
@@ -25,18 +33,18 @@ const Card = (props) => {
   
   return (
     <section key={ticket.id}>
-      <div className='content'>
-        <p className="title">{ticket.id}</p>
-        <div className="priority">
+      <div className={styles.content}>
+        <p className={styles.title}>{ticket.id}</p>
+        <div className={styles.priority}>
           { groupBy !== "status" && <img src={"assets/" + groupToImageMap[ticket.status]} alt="profile" /> }
-          <p className="description">{ticket.title}</p>
+          <p className={styles.description}>{ticket.title}</p>
         </div>        
-        <div className="tags">
+        <div className={styles.tags}>
           { groupBy !== "priority" && <img src={"assets/" + groupToImageMap[priorityLabels[ticket.priority]]} alt="profile" /> }
           <p>{ticket.tag.join(', ')}</p>
         </div>
       </div>
-      <img className="profile1" src={"assets/user.svg"} alt="profile" />
+      <img className={styles.profile1} src={"assets/user.svg"} alt="profile" />
     </section>
   )
 }
