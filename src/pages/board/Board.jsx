@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./KanbanBoard.css";
-import Card from "./card/Card";
-import Navbar from "./navbar/Navbar";
+import "./Board.css";
+import Card from "../../components/card/Card";
+import Navbar from "../../section/navbar/Navbar";
 
 const KanbanBoard = () => {
   const [tickets, setTickets] = useState([]);
@@ -19,7 +19,7 @@ const KanbanBoard = () => {
     Low: "Img - Low Priority.svg",
     Medium: "Img - Medium Priority.svg",
     High: "Img - High Priority.svg",
-    Urgent: "SVG - Urgent Priority colour.svg",
+    Urgent: "SVG - Urgent Priority grey.svg",
     Todo: "To-do.svg",
     "In progress": "in-progress.svg",
     Backlog: "Backlog.svg",
@@ -28,7 +28,7 @@ const KanbanBoard = () => {
   };
 
   // Fallback image
-  const defaultImage = "user.svg";
+  const defaultImage = "profile.jpg";
 
   useEffect(() => {
     // Fetch data from API

@@ -2,8 +2,9 @@ import { useState } from 'react'
 import styles from './Navbar.module.css'
 
 const Navbar = (props) => {
-    const {groupBy, setGroupBy, sortBy, setSortBy} = props
+  const { groupBy, setGroupBy, sortBy, setSortBy } = props
   const [open, setOpen] = useState(false)
+
   return (
     <>
       <header className={styles.header}>
@@ -16,18 +17,24 @@ const Navbar = (props) => {
       {open && <div className={styles.select} >
         <div className={styles.grouping}>
           Grouping
-          <select value={groupBy} onChange={e => setGroupBy(e.target.value)}>
-          <option value="status">Status</option>
-          <option value="user">User</option>
-          <option value="priority">Priority</option>
-        </select>
+          <select value={groupBy} onChange={e => {
+            setGroupBy(e.target.value);
+            setOpen(false)
+          }}>
+            <option value="status">Status</option>
+            <option value="user">User</option>
+            <option value="priority">Priority</option>
+          </select>
         </div>
         <div className={styles.grouping}>
           Ordering
-          <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
-          <option value="priority">Priority</option>
-          <option value="title">Title</option>
-        </select>
+          <select value={sortBy} onChange={e => {
+            setSortBy(e.target.value);
+            setOpen(false)
+          }}>
+            <option value="priority">Priority</option>
+            <option value="title">Title</option>
+          </select>
         </div>
       </div>}
 

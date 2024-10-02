@@ -23,7 +23,7 @@ const Card = (props) => {
     Low: "Img - Low Priority.svg",
     Medium: "Img - Medium Priority.svg",
     High: "Img - High Priority.svg",
-    Urgent: "SVG - Urgent Priority colour.svg",
+    Urgent: "SVG - Urgent Priority grey.svg",
     Todo: "To-do.svg",
     "In progress": "in-progress.svg",
     Backlog: "Backlog.svg",
@@ -40,11 +40,14 @@ const Card = (props) => {
           <p className={styles.description}>{ticket.title}</p>
         </div>        
         <div className={styles.tags}>
-          { groupBy !== "priority" && <img src={"assets/" + groupToImageMap[priorityLabels[ticket.priority]]} alt="profile" /> }
-          <p>{ticket.tag.join(', ')}</p>
+          { groupBy !== "priority" && <img className={styles.profile} src={"assets/" + groupToImageMap[priorityLabels[ticket.priority]]} alt="profile" /> }
+          <div className={styles.tag}>
+            <img src={"assets/grey-dot.svg"} alt="grey dot" />
+            <p>{ticket.tag.join(', ')}</p>
+          </div>
         </div>
       </div>
-      <img className={styles.profile1} src={"assets/user.svg"} alt="profile" />
+      <img className={styles.profile1} src={"assets/profile.jpg"} alt="profile" />
     </section>
   )
 }

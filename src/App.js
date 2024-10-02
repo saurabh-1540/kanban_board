@@ -1,10 +1,10 @@
 import './App.css';
-import KanbanBoard from './components/KanbanBoard';
+import Board from './pages/board/Board';
 
 function App() {
   return (
     <div className="App">
-      <KanbanBoard/>
+      <Board/>
     </div>
   );
 }
