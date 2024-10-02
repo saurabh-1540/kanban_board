@@ -1,0 +1,71 @@
+section {
+    width: 300px;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid rgb(190, 190, 190);
+    border-radius: 8px; 
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    justify-content: space-between;
+    background-color: white;
+    font-size: small;
+}
+
+.title {
+    font-weight: 500;
+    color: #646464;
+}
+
+.description {
+    color: rgb(30, 30, 30);
+    font-weight: 600;
+}
+
+.tags {
+    display: flex; 
+    gap: 0.5rem;
+}
+
+.tags img {
+    padding: 4px; 
+    height: 1rem; 
+    width: 1rem;
+    border: 2px solid rgb(234, 234, 234);
+    border-radius: 4px; 
+}
+
+.tags p {
+    padding: 4px; 
+    border: 2px solid rgb(234, 234, 234);
+    border-radius: 4px; 
+    color: #646464;
+    font-weight: 500;
+}
+
+.profile1 {
+    height: 1.2rem;
+    width: 1.2rem; 
+    border: 2px solid rgb(234, 234, 234);
+    padding: 2px;
+    border-radius: 16px;
+}
+
+.priority {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.priority img {
+    margin-top: 2px; 
+}
